@@ -35,3 +35,13 @@ en:
     all_users: "All users"
     delete: "delete"
     user_deleted: "User deleted"
+  mailer:
+    hi: "Hi"
+    wellcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+    activate: "Activate"
+    please_check_email: "Please check your email to activate your account."
+    account_activation: "Account activation"
+    account_activated: "Account activated!"
+    invalid_activation_link: "Invalid activation link"
+    account_not_activated: "Account not activated. "
+    check_your_email: "Check your email for the activation link."
