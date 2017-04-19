@@ -24,3 +24,5 @@ en:
     users: "Users"
     profile: "Profile"
     settings: "Settings"
+    new_user?: "New user?"
+    remember_me: "Remember me on this computer"
