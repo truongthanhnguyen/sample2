@@ -61,3 +61,7 @@ en:
     can't_be_empty: "can't be empty"
     password_has_been_reset: "Password has been reset."
     password_reset_has_expired: "Password reset has expired."
+  micropost:
+    posted: "Posted"
+    ago: "ago."
+    microposts: "Microposts"
