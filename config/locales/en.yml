@@ -14,6 +14,9 @@ en:
     sample_application: "sample application."
     sign_up_now: "Sign up now!"
     rails_logo: "Rails logo"
+    forgot_password: "(forgot password)"
+    forgot_password2: "Forgot password"
+    submit: "Submit"
   user:
     sign_up: "Sign up"
     create_my_account: "Create my account"
@@ -45,3 +48,16 @@ en:
     invalid_activation_link: "Invalid activation link"
     account_not_activated: "Account not activated. "
     check_your_email: "Check your email for the activation link."
+    email_sent_with_password: "Email sent with password reset instructions"
+    email_address_not_found: "Email address not found"
+    password_reset: "Password reset"
+    click_to_reset_password: "To reset your password click the link below:"
+    this_link_will: "This link will expire in two hours.
+
+      If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+    reset_password: "Reset password"
+    update_password: "Update Password"
+    confirmation: "Confirmation"
+    can't_be_empty: "can't be empty"
+    password_has_been_reset: "Password has been reset."
+    password_reset_has_expired: "Password reset has expired."
