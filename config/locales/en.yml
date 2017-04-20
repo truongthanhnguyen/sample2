@@ -38,6 +38,7 @@ en:
     all_users: "All users"
     delete: "delete"
     user_deleted: "User deleted"
+    view_my_profile: "view my profile"
   mailer:
     hi: "Hi"
     wellcome: "Welcome to the Sample App! Click on the link below to activate your account:"
@@ -64,4 +65,15 @@ en:
   micropost:
     posted: "Posted"
     ago: "ago."
+    micropost: "micropost"
     microposts: "Microposts"
+    micropost_created: "Micropost created!"
+    compose: "Compose new micropost..."
+    post: "Post"
+    the_form_contains: "The form contains"
+    micropost_feed: "Micropost Feed"
+    delete: "delete"
+    you_sure: "You sure?"
+    micropost_deleted: "Micropost deleted"
+    should_be: "should be less than 5MB"
+    maximum_file_size: "Maximum file size is 5MB. Please choose a smaller file."
