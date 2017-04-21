@@ -39,6 +39,10 @@ en:
     delete: "delete"
     user_deleted: "User deleted"
     view_my_profile: "view my profile"
+    following: "following"
+    followers: "followers"
+    follow: "Follow"
+    unfollow: "Unfollow"
   mailer:
     hi: "Hi"
     wellcome: "Welcome to the Sample App! Click on the link below to activate your account:"
