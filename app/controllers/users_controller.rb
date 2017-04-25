@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.paginate page: params[:page], per_page: Settings.user.user_per_page
   end
 
   def new
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find params[:id]
-    @microposts = @user.microposts.paginate page: params[:page]
+    @microposts = @user.microposts.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def create
