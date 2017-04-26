@@ -18,68 +18,72 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new user_params
-  	if @user.save
-      @user.send_activation_email
-      flash[:info] = t "mailer.please_check_email"
-      redirect_to root_url
-    else
-      render "new"
-    end
+  	# if @user.save
+   #    # @user.send_activation_email
+   #    # flash[:info] = t "mailer.please_check_email"
+   #    redirect_to root_url
+   if @user.save
+    log_in @user
+    flash[:success] = "wellcome to the sample app!"
+    redirect_to @user
+  else
+    render "new"
   end
+end
 
-  def edit
-    @user = User.find params[:id]
-  end
+def edit
+  @user = User.find params[:id]
+end
 
-  def update
-    @user = User.find params[:id]
-    if @user.update_attributes user_params
-      flash[:success] = t "user.profile_updated"
-      redirect_to @user
-    else
-      render "edit"
-    end
+def update
+  @user = User.find params[:id]
+  if @user.update_attributes user_params
+    flash[:success] = t "user.profile_updated"
+    redirect_to @user
+  else
+    render "edit"
   end
+end
 
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = t "user.user_deleted"
-    redirect_to users_url
-  end
+def destroy
+  User.find(params[:id]).destroy
+  flash[:success] = t "user.user_deleted"
+  redirect_to users_url
+end
 
-  def following
-    @title = t "user.following"
-    @user  = User.find params[:id]
-    @users = @user.following.paginate(page: params[:page])
-    render "show_follow"
-  end
+def following
+  @title = t "user.following"
+  @user  = User.find params[:id]
+  @users = @user.following.paginate(page: params[:page])
+  render "show_follow"
+end
 
-  def followers
-    @title = t "user.followers"
-    @user  = User.find params[:id]
-    @users = @user.followers.paginate(page: params[:page])
-    render "show_follow"
-  end
+def followers
+  @title = t "user.followers"
+  @user  = User.find params[:id]
+  @users = @user.followers.paginate(page: params[:page])
+  render "show_follow"
+end
 
-  private
-  def user_params
-  	params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
+private
+def user_params
+ params.require(:user).permit(:name, :email, :password, :password_confirmation)
+end
 
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t "user.please_log_in"
-      redirect_to login_url
-    end
+def logged_in_user
+  unless logged_in?
+    store_location
+    flash[:danger] = t "user.please_log_in"
+    redirect_to login_url
   end
+end
 
-  def correct_user
-    @user = User.find params[:id]
-    redirect_to(root_url) unless @user == current_user
-  end
+def correct_user
+  @user = User.find params[:id]
+  redirect_to(root_url) unless @user == current_user
+end
 
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-  end
+def admin_user
+  redirect_to(root_url) unless current_user.admin?
+end
 end
