@@ -10,3 +10,5 @@ user:
   name_size: 50
   email_size: 255
   password_minium: 1
+comment:
+  content_length: 255

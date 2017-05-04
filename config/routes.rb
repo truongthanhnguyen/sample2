@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "sessions/new"
 
 	root "static_pages#home"
+	# root "microposts#index"
 
 	get "/signup", to: "users#new"
 	get    "/login",   to: "sessions#new"
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
 	end
 	resources :account_activations, only: [:edit]
 	resources :password_resets, only: [:new, :create, :edit, :update]
-	resources :microposts, only: [:create, :destroy]
+	resources :microposts, only: [:create, :destroy, :show, :index] do
+		resources :comments
+	end
 	resources :relationships, only: [:create, :destroy]
 end

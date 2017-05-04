@@ -82,3 +82,11 @@ en:
     micropost_deleted: "Micropost deleted"
     should_be: "should be less than 5MB"
     maximum_file_size: "Maximum file size is 5MB. Please choose a smaller file."
+  comment:
+    comment_created: "comment created!"
+    follow_to_comment: "please follow this user to comment"
+    all_entries: "All Entries"
+    posted: "Posted"
+    ago: "ago."
+    read_more: "read more"
+    

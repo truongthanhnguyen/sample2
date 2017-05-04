@@ -1,0 +1,39 @@
+   <div class="row">
+    <div class="col-lg-8">
+      <h1 style="text-align: left"><%= @micropost.title %></h1>
+      <p class="lead">
+        by <%= link_to @micropost.user.name, @micropost.user %>
+      </p>
+      <hr>
+
+      <p><span class="glyphicon glyphicon-time"></span> Posted <%= time_ago_in_words(@micropost.created_at) %> ago.</p>
+      <hr>
+
+      <p class="lead"><%= @micropost.content %></p>
+      <hr>
+
+      <div class="well" id="well">
+        <h4>Leave a Comment:</h4>
+
+              <%= form_for @comment, :url => micropost_comments_path(@micropost) do |f| %>
+              <%= render "shared/error_messages", object: f.object %>
+              <%= f.text_area :content, placeholder: "Compose new comment...", class: "form-control" %>
+              <%= f.submit "Submit", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+            <hr>
+
+            <% @comments.each do |comment| %>
+            <div class="media">
+
+      <%= link_to gravatar_for(comment.user, size: 30), comment.user, class: "pull-left" %>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to comment.user.name, comment.user %>   
+          <small><%= comment.created_at %></small>
+        </h4>
+        <%= comment.content %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

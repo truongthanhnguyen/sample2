@@ -1,0 +1,19 @@
+<h1><%= t "comment.all_entries" %></h1>
+
+<% @microposts.each do |micropost|%>
+<div class="post">
+<h1 style="text-align: left">
+	<%= link_to micropost.title, micropost %>
+</h1>
+<p class="lead">
+	by <%= link_to micropost.user.name, micropost.user %>
+</p>
+<p><span class="glyphicon glyphicon-time"></span> <%= t "comment.posted" %> <%= time_ago_in_words(micropost.created_at) %> <%= t "comment.ago" %></p>
+<p><%= micropost.content %> </p>
+
+<%= link_to t("comment.read_more"), micropost , class: "btn btn-primary" %>
+<hr>
+</div>
+<% end %>
+
+ <%= will_paginate %>
