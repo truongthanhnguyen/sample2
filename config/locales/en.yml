@@ -67,6 +67,7 @@ en:
     password_has_been_reset: "Password has been reset."
     password_reset_has_expired: "Password reset has expired."
   micropost:
+    title: title
     posted: "Posted"
     ago: "ago."
     micropost: "micropost"
